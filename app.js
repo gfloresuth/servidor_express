@@ -1,8 +1,6 @@
 var express = require('express');
 var app = express();
 
-
-
 const PORT=8090;
 
 app.engine('html', require('atpl').__express);
