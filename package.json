@@ -9,7 +9,7 @@
   "dependencies":{
     "express":"latest",
     "atpl":"latest",
-    "body-parse":"latest"
+    "body-parser":"latest"
   },
   "keywords": [
     "servidor",
