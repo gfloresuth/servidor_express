@@ -12,7 +12,13 @@ app.set('devel',false);
 app.get('/nosotros/',function(req,res){
     res.render('nosotros',{'nombre':'Patito plus'});
 });
-
+app.get('/listado/',function(req,res){
+    var elementos=[];
+    elementos.push('Soda');
+    elementos.push('Pizza');
+    elementos.push('Pastel');
+    res.render('listado',{'elementos':elementos});
+});
 
 app.get('/',function(req,res){
     //res.send('Hola que tal');
