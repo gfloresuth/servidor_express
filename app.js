@@ -15,7 +15,8 @@ app.get('/nosotros/',function(req,res){
 
 
 app.get('/',function(req,res){
-    res.send('Hola que tal');
+    //res.send('Hola que tal');
+    res.render('index',{});
 });
 
 app.listen(PORT, function(){
