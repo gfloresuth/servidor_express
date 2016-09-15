@@ -5,7 +5,7 @@ var app = express();
 //https://github.com/gfloresuth/
 const PORT=8090;
 
-
+  app.use('/assets', express.static(__dirname + '/assets'));
 app.engine('html', require('atpl').__express);
 app.set('view engine','html');
 app.set('devel',false);
@@ -32,8 +32,8 @@ app.get('/listado/',function(req,res){
 
 app.get('/',function(req,res){
 
-    res.send('Hola que tal');
-    //res.render('index',{});
+    //res.send('Hola que tal');
+    res.render('index',{});
 });
 
 app.listen(PORT, function(){
