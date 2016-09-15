@@ -1,11 +1,6 @@
 var express = require('express');
 var app = express();
 
-<<<<<<< HEAD
-
-//https://github.com/gfloresuth/
-=======
->>>>>>> e1c34038e8892da3b13d8547833cba9650405860
 const PORT=8090;
 
   app.use('/assets', express.static(__dirname + '/assets'));
