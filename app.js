@@ -3,7 +3,7 @@ var app = express();
 
 const PORT=8090;
 
-  app.use('/assets', express.static(__dirname + '/assets'));
+app.use('/assets', express.static(__dirname + '/assets'));
 app.engine('html', require('atpl').__express);
 app.set('view engine','html');
 app.set('devel',false);
@@ -28,11 +28,12 @@ app.get('/listado/',function(req,res){
     res.render('mostrar2',variables);
 });
 
-app.get('/',function(req,res){
+/*app.get('/',function(req,res){
 
     //res.send('Hola que tal');
-    res.render('index',{});
-});
+    //res.render('index',{});
+});*/
+app.use('/',express.static(__dirname+"/public"));
 
 app.listen(PORT, function(){
     console.log('Listo');
