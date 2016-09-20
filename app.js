@@ -36,7 +36,20 @@ app.get('/listado/',function(req,res){
 app.use('/',express.static(__dirname+"/public"));
 
 app.get('/helloworld/',function(req,res){
-    res.send('Otro texto');
+    var oFecha = new Date();
+    var rnd = oFecha.getTime();
+    res.send('Otro texto ' + rnd);
+});
+app.get('/numeros/',function(req,res){
+    var numeros = [2,3,4,5,100];
+    res.json(numeros);
+});
+app.get('/alumnos/',function(req,res){
+    var alumnos = [];
+    
+    alumnos.push({nombre:"Luis",
+        "correo":"luis@hotmail.com"});
+    res.json(alumnos);
 });
 
 app.listen(PORT, function(){
