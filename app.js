@@ -35,6 +35,10 @@ app.get('/listado/',function(req,res){
 });*/
 app.use('/',express.static(__dirname+"/public"));
 
+app.get('/helloworld/',function(req,res){
+    res.send('Otro texto');
+});
+
 app.listen(PORT, function(){
     console.log('Listo');
 });
