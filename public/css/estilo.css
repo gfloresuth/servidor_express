@@ -1,0 +1,13 @@
+#divSalida {
+    background-color:black;
+    color: white;
+    padding: 8px;
+    /*  Mover el div  */
+    position: absolute;
+    /*top: 16px;
+    right: 16px;*/
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    border-radius: 8px;
+}

@@ -47,9 +47,10 @@ app.get('/numeros/',function(req,res){
 app.get('/alumnos/',function(req,res){
     var alumnos = [];
     
-    alumnos.push({nombre:"Luis",
-        "correo":"luis@hotmail.com"});
+    alumnos.push({nombre:"Luis", "correo":"luis@hotmail.com"});
+    alumnos.push({nombre:"Pepe", "correo":"pepe@hotmail.com"});
     res.json(alumnos);
+    
 });
 
 app.listen(PORT, function(){
