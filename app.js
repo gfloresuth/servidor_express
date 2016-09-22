@@ -24,6 +24,7 @@ app.get('/nosotros/',function(req,res){
 
 // se agrega ruta '/listado/', la cual es visible en http://localhost:8090/listado/
 app.get('/listado/',function(req,res){
+    // arreglo simple
     var arreglo = [];
     arreglo.push('PASTEL');
     arreglo.push('DOGO MANIACO');
@@ -31,6 +32,7 @@ app.get('/listado/',function(req,res){
     arreglo.push('otro mas');
 
     
+    // arreglo para pasar variables a la vista
     var variables = {
         'arreglo': arreglo
     };
