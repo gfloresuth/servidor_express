@@ -1,18 +1,28 @@
+// se agrega modulo express
 var express = require('express');
+// se crea servidor
 var app = express();
 
+// se declara puerto
 const PORT=8090;
 
-app.use('/assets', express.static(__dirname + '/assets'));
-app.engine('html', require('atpl').__express);
-app.set('view engine','html');
-app.set('devel',false);
-// views
 
+// se agrega ruta fija /assets en directorio /assets
+app.use('/assets', express.static(__dirname + '/assets'));
+// se agrega un engine llamado 'html', el cual es 'atpl'
+app.engine('html', require('atpl').__express);
+// se especifica que el 'view engine' es 'html' (declarado previamente)
+app.set('view engine','html');
+
+app.set('devel',false);
+
+
+// se agrega ruta '/nosotros/', la cual es visible en http://localhost:8090/nosotros/
 app.get('/nosotros/',function(req,res){
     res.render('nosotros',{'nombre':'Patito plus'});
 });
 
+// se agrega ruta '/listado/', la cual es visible en http://localhost:8090/listado/
 app.get('/listado/',function(req,res){
     var arreglo = [];
     arreglo.push('PASTEL');
@@ -33,17 +43,25 @@ app.get('/listado/',function(req,res){
     //res.send('Hola que tal');
     //res.render('index',{});
 });*/
+
+// se agrega ruta '/', la cual se encuentra en el directorio public
 app.use('/',express.static(__dirname+"/public"));
 
+
+// se agrega ruta '/helloworld/'
 app.get('/helloworld/',function(req,res){
     var oFecha = new Date();
     var rnd = oFecha.getTime();
     res.send('Otro texto ' + rnd);
 });
+
+// se agrega ruta '/numeros/', como servicio que regresa formato json
 app.get('/numeros/',function(req,res){
     var numeros = [2,3,4,5,100];
     res.json(numeros);
 });
+
+// se agrega ruta '/alumnos/', como servicio que regresa formato json
 app.get('/alumnos/',function(req,res){
     var alumnos = [];
     
