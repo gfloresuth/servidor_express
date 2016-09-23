@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     $('#imgAlumno').click(function(){
         //console.log('aki toy');
-        $.getJSON('/alumnos/', function(datos){
+        $.getJSON('/alumnoss/', function(datos){
             //console.log(datos);
             var elementos=[];
             $.each(datos,function(i,v){
@@ -17,7 +17,9 @@ $(document).ready(function(){
                 elementos.push(v.nombre);
             }); // fin .each
             $('#divSalida').html(''+elementos.join('<br>'));
-        }); // fin getJSON
+        }).fail(function(){
+            
+        });  // fin getJSON
     }); // fin click
 
 }); // fin $(document).ready
