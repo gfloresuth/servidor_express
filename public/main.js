@@ -1,3 +1,4 @@
+//https://github.com/gfloresuth/servidor_express/
 $(document).ready(function(){
     $('#divSalida').html('Listo.');
     $('#imgMundo').click(function(){
@@ -18,7 +19,7 @@ $(document).ready(function(){
             }); // fin .each
             $('#divSalida').html(''+elementos.join('<br>'));
         }).fail(function(){
-            
+            $('#divSalida').html('Error');
         });  // fin getJSON
     }); // fin click
 
