@@ -1,7 +1,11 @@
 //https://github.com/gfloresuth/servidor_express/
 $(document).ready(function(){
     $('#divSalida').html('Listo.');
+    $('#divSalida').addClass('normal');
+    $('#divSalida').removeClass('error');
     $('#imgMundo').click(function(){
+        $('#divSalida').addClass('normal');
+        $('#divSalida').removeClass('error');
         $('#divSalida').html('Un click');
         $.get('/helloworld/',{},function(contenido){
             $('#divSalida').html(contenido);
@@ -9,6 +13,8 @@ $(document).ready(function(){
     });
 
     $('#imgAlumno').click(function(){
+        $('#divSalida').addClass('normal');
+        $('#divSalida').removeClass('error');
         //console.log('aki toy');
         $.getJSON('/alumnoss/', function(datos){
             //console.log(datos);
@@ -20,6 +26,8 @@ $(document).ready(function(){
             $('#divSalida').html(''+elementos.join('<br>'));
         }).fail(function(){
             $('#divSalida').html('Error');
+            $('#divSalida').addClass('error');
+
         });  // fin getJSON
     }); // fin click
 

@@ -1,5 +1,5 @@
 #divSalida {
-    background-color:black;
+    /*background-color:black;*/
     color: white;
     padding: 8px;
     /*  Mover el div  */
@@ -11,4 +11,10 @@
     right: 16px;
     /*left: 16px;*/
     border-radius: 8px;
+}
+.normal{
+    background-color:black;    
+}
+.error {
+    background-color:red;
 }
