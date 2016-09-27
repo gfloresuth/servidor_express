@@ -3,6 +3,13 @@ $(document).ready(function(){
     $('#divSalida').html('Listo.');
     $('#divSalida').addClass('normal');
     $('#divSalida').removeClass('error');
+    // A.J.A.X.
+    // xmlHttpRequest
+    $('#frmDatos').submit(function(e){
+        e.preventDefault();
+        
+    });
+
     $('#imgMundo').click(function(){
         $('#divSalida').addClass('normal');
         $('#divSalida').removeClass('error');
@@ -16,7 +23,7 @@ $(document).ready(function(){
         $('#divSalida').addClass('normal');
         $('#divSalida').removeClass('error');
         //console.log('aki toy');
-        $.getJSON('/alumnoss/', function(datos){
+        $.getJSON('/alumnos/', function(datos){
             //console.log(datos);
             var elementos=[];
             $.each(datos,function(i,v){

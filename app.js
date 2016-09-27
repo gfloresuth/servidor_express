@@ -73,6 +73,18 @@ app.get('/alumnos/',function(req,res){
     
 });
 
+app.get('/productos/',function(req,res){
+    res.send('Nada');
+});
+
+app.get('/productos/:id',function(req,res){
+    res.send(''+ req.params.id);
+});
+
+app.post('/',function(req,res){
+    res.send('No disponible.');
+});
+
 app.listen(PORT, function(){
     console.log('Listo');
 });
