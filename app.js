@@ -1,7 +1,15 @@
 // se agrega modulo express
 var express = require('express');
+var bodyParser = require('body-parser');
+
+
+
 // se crea servidor
 var app = express();
+
+// se usa body-parser
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // se declara puerto
 const PORT=8090;
@@ -82,7 +90,7 @@ app.get('/productos/:id',function(req,res){
 });
 
 app.post('/',function(req,res){
-    res.send('No disponible.');
+    res.send('No disponible. ' + req.body.palabra);
 });
 
 app.listen(PORT, function(){
