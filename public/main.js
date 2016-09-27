@@ -7,7 +7,10 @@ $(document).ready(function(){
     // xmlHttpRequest
     $('#frmDatos').submit(function(e){
         e.preventDefault();
-        
+        var datosFormulario = $('#frmDatos').serialize();
+        $.post('/',datosFormulario,function(datos){
+            $('#divResultados').html(datos);
+        });
     });
 
     $('#imgMundo').click(function(){
