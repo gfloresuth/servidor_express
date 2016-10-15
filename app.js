@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 // se crea servidor
 var app = express();
 
+
 // se usa body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
